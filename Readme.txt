@@ -15,12 +15,12 @@ Do
 if (Test-Connection 8.8.8.8 -Count 3 -Delay 2 -BufferSize 256 -Quiet)
  {
  $action2 = "Internet Connected $((Get-Date).ToString())" 
- $action2 | Out-File C:\tplink\logs.txt -Append
+ $action2 | Out-File C:\tplink\checklogs.txt
  }
   ELSE
 {
 $action1 = "Reboot Router $((Get-Date).ToString())" 
-$action1 | Out-File C:\tplink\logs.txt -Append
+$action1 | Out-File C:\tplink\rebootlogs.txt -Append
 $port= new-Object System.IO.Ports.SerialPort COM1,115200,None,8,one
 $port.Open()
 Start-Sleep -m 2000
@@ -32,11 +32,11 @@ $port.WriteLine("ip get lan")
 Start-Sleep -m 500
 $port.WriteLine("disable")
 Start-Sleep -m 500
-$port.ReadExisting() | Out-File C:\tplink\logs.txt -Append
+$port.ReadExisting() | Out-File C:\tplink\rebootlogs.txt -Append
 Start-Sleep -m 500
 $port.Close()
  }
- Start-Sleep 5
+ Start-Sleep -s 600
 }
 While ($loop=1)
 
@@ -47,8 +47,10 @@ I use next Sorlov.PowerShell Library to run script as Windows Service.
 https://www.youtube.com/watch?v=CJXf4proZD8
 http://sorlov.azurewebsites.net/page/PowerShell-Projects.aspx
 
+Copy file router.serial.ps1 to folder c:\tplink and run in powershell
 New-SelfHostedPS .\router.serial.ps1 -Service -ServiceName ChkRouter -ServiceDisplayName "Check Router" -ServiceDescription "Check Internet connection and reboot router if it is no connection."
 
+then
 .\router.serial.exe /install
 
 Author Witalij Metelski
