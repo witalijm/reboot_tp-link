@@ -1,4 +1,5 @@
 Reboot TP-LINK er6120 router when your Internet connection drops.
+
 My router seems to lock up and requires a reboot.
 I cannot use telnet
 http://1000pytan.pl/informatyka/tp-link-tl-r480t-command-line-interface/ </br>
