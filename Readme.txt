@@ -16,13 +16,13 @@ Do
 if (Test-Connection 8.8.8.8 -Count 3 -Delay 2 -BufferSize 256 -Quiet) # ping adr 8.8.8.8
  {
  # If it's true then rewrite checklogs.txt to proof that script is running.
- $action2 = "Internet Connected $((Get-Date).ToString())" 
+ $action2 = "Last Internet connection checked on $((Get-Date).ToString())" 
  $action2 | Out-File C:\tplink\checklogs.txt
  }
   ELSE
 {
 # If it's false then add new line for evidence that router is reboot.
-$action1 = "Reboot Router $((Get-Date).ToString())" 
+$action1 = "Router rebooted on $((Get-Date).ToString())" 
 $action1 | Out-File C:\tplink\rebootlogs.txt -Append
 $port= new-Object System.IO.Ports.SerialPort COM1,115200,None,8,one
 $port.Open() # open serial port COM1
