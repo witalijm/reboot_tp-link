@@ -9,6 +9,7 @@ http://www.jfwhome.com/2012/06/18/reboot-tp-link-router-remotely-or-automaticall
 I wrote script for powershell to ping the external addr (8.8.8.8) and reboot router if it doesn't ping.
   
 <code>
+
 $loop=0
 Do
 {
@@ -42,7 +43,7 @@ While ($loop=1)
 
 </code>
 
-I use next Sorlov.PowerShell Library to run script as Windows Service.
+I used Sorlov.PowerShell Library to run script as Windows Service.
 
 https://www.youtube.com/watch?v=CJXf4proZD8
 http://sorlov.azurewebsites.net/page/PowerShell-Projects.aspx
