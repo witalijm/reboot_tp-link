@@ -16,7 +16,7 @@ Do
 if (Test-Connection 8.8.8.8 -Count 3 -Delay 2 -BufferSize 256 -Quiet) # ping adr 8.8.8.8
  {
  # If it's true then rewrite checklogs.txt to proof that script is running.
- $action2 = "Last Internet connection checked on $((Get-Date).ToString())" 
+ $action2 = "Last time Internet connection checked on $((Get-Date).ToString())" 
  $action2 | Out-File C:\tplink\checklogs.txt
  }
   ELSE
