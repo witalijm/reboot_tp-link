@@ -19,6 +19,8 @@ $port.WriteLine("admin")
 Start-Sleep -m 500
 $port.WriteLine("sys reboot")
 Start-Sleep -m 500
+$port.WriteLine("sys reboot")
+Start-Sleep -m 500
 $port.WriteLine("disable")
 Start-Sleep -m 500
 $port.ReadExisting() | Out-File C:\tplink\rebootlogs.txt -Append
