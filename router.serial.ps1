@@ -19,7 +19,7 @@ $port.WriteLine("admin")
 Start-Sleep -m 500
 $port.WriteLine("sys reboot")
 Start-Sleep -m 500
-$port.WriteLine("sys reboot")
+$port.WriteLine("Y")
 Start-Sleep -m 500
 $port.WriteLine("disable")
 Start-Sleep -m 500
