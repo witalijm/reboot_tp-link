@@ -33,6 +33,8 @@ $port.WriteLine("admin")
 Start-Sleep -m 500
 $port.WriteLine("sys reboot")
 Start-Sleep -m 500
+$port.WriteLine("Y")
+Start-Sleep -m 500
 $port.WriteLine("disable") # This is not needed if router reboots.
 Start-Sleep -m 500
 $port.ReadExisting() | Out-File C:\tplink\rebootlogs.txt -Append
